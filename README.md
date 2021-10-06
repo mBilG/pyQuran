@@ -1,8 +1,10 @@
-# FurqanPy
-Mushaf / Qur'an using old King Fahd Uthmani script in Python
+# pyQuran
 
-A simple GTK+3 Qur'an app built mainly for linux PCs.
-Using the old Uthmani Madina - 15 lines - script (will maybe include the new script later on).
-Can be run directly from the python file.
+Mushaf / Qur'an using King Fahd Uthmani script written in Python 3
+
+A simple GTK+3 Qur'an app built for linux PCs and distributed as a Flatpak.
+Using the old/new Uthmani Madina - 15 lines - script.
 
 If anyone is interested to help with this project, you're most welcome.
+
+Find screenshots/features here: www.thinqrlab.com/projects/pyquran

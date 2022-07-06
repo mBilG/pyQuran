@@ -1,10 +1,30 @@
 # pyQuran
 
-Mushaf / Qur'an using King Fahd Uthmani script written in Python 3
+pyQyran is a simple Quran reader for Linux desktop.
 
-A simple GTK+3 Qur'an app built for linux PCs and distributed as a Flatpak.
-Using the old/new Uthmani Madina - 15 lines - script.
+## Features
 
-If anyone is interested to help with this project, you're most welcome.
+- Built using GTK4 & libadwaita
+- Simple & intuitive
+- Uses the old Madani script from King Fahd Complex
+- Follows system dark/light theme
+- Automatically folds/unfolds to see single/double page/s.
+
+## Description
+
+pyQuran is a simple and easy to use Quran reader for the linux desktop that uses the old Madani scripts from the King Fahd Complex.
+You can navigate to any surah directly from the sidebar that can be opened using a 2-finger swipe on a trackpad, or by pressing the top left sidebar button. 
+You can also jump to any page by entering the page number in the spin box.
+You can navigate from page to page using the left and right arrows.
+
+Here is the URL to a quick demo of the App:
+
+## Installation
+
+Download and install flatpak from Releases tab.
+
+## License
+
+GPL 3.0
 
 Find screenshots/features here: www.thinqrlab.com/projects/pyquran

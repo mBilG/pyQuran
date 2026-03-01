@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="Adw" version="1.0"/>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.4"/>
+
+  <template class="SidebarList" parent="GtkBox">
+  <child>
+    <object class="GtkScrolledWindow" id="sidebarScroll">
+      <property name="hscrollbar-policy">never</property>
+      <child>
+       <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="vexpand">True</property>
+         <property name="hexpand">True</property>
+          <child>
+            <object class="GtkListBox" id="listbox">
+              <property name="selection-mode">single</property>
+              <style>
+                <class name="navigation-sidebar"/>
+              </style>
+              <child>
+                <placeholder/>
+              </child>
+              <signal name="row-selected" handler="on_row_selected" swapped="no"/>
+            </object>
+          </child>
+       </object>
+      </child>
+    </object>
+  </child>
+  </template>
+</interface>

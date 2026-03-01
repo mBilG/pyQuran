@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=pyquran
+Exec=pyquran
+Icon=com.thinqrlab.pyQuran
+Terminal=false
+Type=Application
+Categories=Utility;Education
+Keywords=GTK;Quran;Islam;Religion;
+StartupNotify=true
+DBusActivatable=true

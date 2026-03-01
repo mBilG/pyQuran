@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="Adw" version="1.0"/>
+  <requires lib="gio" version="2.0"/>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.4"/>
+
+  <template class="MobileView" parent="GtkBox">
+    <child>
+      <object class="GtkBox" id="view_single">
+          <property name="spacing">12</property>
+          <property name="halign">center</property>
+          <property name="valign">center</property>
+          <property name="hexpand">True</property>
+          <property name="vexpand">True</property>
+
+          <child>
+            <object class="GtkPicture" id="page">
+              <property name="can-shrink">True</property>
+              <property name="hexpand">True</property>
+              <property name="vexpand">True</property>
+            </object>
+          </child>
+
+      </object>
+    </child>
+  </template>
+</interface>

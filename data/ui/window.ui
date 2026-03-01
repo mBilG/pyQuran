@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="Adw" version="1.0"/>
+  <requires lib="gio" version="2.0"/>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.4"/>
+
+  <object class="GtkAdjustment" id="adjustment">
+    <property name="lower">1</property>
+    <property name="upper">604</property>
+    <property name="value">1</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+    <signal name="value-changed" handler="on_adjustment_value_changed" swapped="no"/>
+  </object>
+
+  <template class="PyquranWindow" parent="AdwApplicationWindow">
+    <property name="default-height">600</property>
+    <property name="default-width">1000</property>
+    <property name="height-request">550</property>
+    <property name="width-request">400</property>
+
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 800px</condition>
+        <setter object="view_stack" property="visible-child-name">mobile</setter>
+      </object>
+    </child>
+
+
+    <child>
+      <object class="AdwOverlaySplitView" id="split_view">
+          <property name="show-sidebar"
+                    bind-source="sidebar_button"
+                    bind-property="active"
+                    bind-flags="bidirectional|sync-create"/>
+        <property name="collapsed">True</property>
+
+          <property name="sidebar">
+            <object class="SidebarList" id="sidebar_list"/>
+          </property>
+
+        <property name="content">
+          <object class="AdwToolbarView" id="main_toolbar_view">
+            <property name="extend-content-to-bottom-edge">True</property>
+            <property name="extend-content-to-top-edge">False</property>
+
+
+
+            <child type="top">
+              <object class="AdwHeaderBar" id="header_bar">
+
+                <property name="title-widget">
+                  <object class="GtkLabel" id="app_title">
+                    <property name="label"></property>
+                  </object>
+                </property>
+
+                <child type="start">
+
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkToggleButton" id="sidebar_button">
+                      <property name="icon-name">view-sidebar-start-symbolic</property>
+                      <property name="tooltip-text" translatable="yes">Toggle Sidebar</property>
+                      <style>
+                        <class name="flat"/>
+                      </style>
+                      </object>
+                    </child>
+                  </object>
+
+                </child>
+
+
+
+
+                <child type="end">
+                  <object class="GtkBox">
+                    <property name="spacing">12</property>
+                    <child>
+                      <object class="GtkSpinButton" id="page_spin">
+                        <property name="adjustment">adjustment</property>
+                        <property name="wrap">True</property>
+                        <property name="digits">0</property>
+                        <property name="numeric">True</property>
+                      </object>
+
+                    </child>
+                    <child>
+                  <object class="GtkMenuButton">
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="menu-model">primary_menu</property>
+                    <property name="primary">True</property>
+                    <property name="tooltip-text" translatable="yes">Main Menu</property>
+                  </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+
+
+            <property name="content">
+
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkButton" id="btnLeft">
+                    <property name="icon-name">go-previous-symbolic</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <signal name="clicked" handler="on_btnLeft_clicked" swapped="no"/>
+                    <style>
+                      <class name="flat"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwViewStack" id="view_stack">
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="name">desktop</property>
+                        <property name="child">
+                          <object class="DesktopView" id="desktop_layout"/>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="name">mobile</property>
+                        <property name="child">
+                          <object class="MobileView" id="mobile_layout"/>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btnRight">
+                    <property name="icon-name">go-next-symbolic</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <signal name="clicked" handler="on_btnRight_clicked" swapped="no"/>
+                    <style>
+                      <class name="flat"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+
+            </property>
+
+
+          </object>
+        </property>
+
+
+
+      </object>
+    </child>
+
+
+
+
+  </template>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="action">app.preferences</attribute>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.shortcuts</attribute>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.about</attribute>
+        <attribute name="label" translatable="yes">_About PyQuran</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

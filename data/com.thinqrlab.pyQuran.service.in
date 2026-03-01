@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.thinqrlab.pyQuran
+Exec=@bindir@/pyquran --gapplication-service

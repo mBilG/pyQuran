@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="Adw" version="1.0"/>
+  <requires lib="gio" version="2.0"/>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.4"/>
+
+  <template class="DesktopView" parent="GtkBox">
+    <property name="orientation">horizontal</property>
+    <property name="homogeneous">True</property>
+    <property name="spacing">12</property>
+    <child>
+      <object class="GtkBox" id="view_double">
+          <property name="spacing">12</property>
+          <property name="halign">center</property>
+          <property name="valign">center</property>
+          <property name="hexpand">True</property>
+          <property name="vexpand">True</property>
+
+          <child>
+            <object class="GtkBox" id="img_double">
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkBox" id="pageLeft">
+                <property name="orientation">vertical</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="halign">end</property>
+                <child>
+                  <object class="GtkPicture" id="imageLeft">
+                  <property name="can-shrink">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="labelLeft">
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="label">2</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="pageRight">
+                <property name="orientation">vertical</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="halign">start</property>
+                <child>
+                  <object class="GtkPicture" id="imageRight">
+                    <property name="can-shrink">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="labelRight">
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="label">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            </object>
+          </child>
+
+      </object>
+    </child>
+  </template>
+</interface>
+

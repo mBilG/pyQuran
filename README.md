@@ -13,18 +13,14 @@ pyQyran is a simple Quran reader for Linux desktop.
 ## Description
 
 pyQuran is a simple and easy to use Quran reader for the linux desktop that uses the old Madani scripts from the King Fahd Complex.
-You can navigate to any surah directly from the sidebar that can be opened using a 2-finger swipe on a trackpad, or by pressing the top left sidebar button. 
-You can also jump to any page by entering the page number in the spin box.
-You can navigate from page to page using the left and right arrows.
+I will add more page types in the future - maybe the writing for other qira'at as well.
 
-Here is the URL to a quick demo of the App:
 
 ## Installation
 
-Download and install flatpak from Releases tab.
+Download and install flatpak from Releases tab - until I figure out how to get it on flathub or something.
 
 ## License
 
 GPL 3.0
 
-Find screenshots/features here: www.thinqrlab.com/projects/pyquran

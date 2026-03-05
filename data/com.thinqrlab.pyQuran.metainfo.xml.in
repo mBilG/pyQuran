@@ -48,13 +48,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://example.org/example1.png</image>
-      <caption>A caption</caption>
+      <image>https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_light_dual_page_sidebar.png</image>
+      <caption>Dual page view with sidebar in light mode</caption>
     </screenshot>
     <screenshot>
-      <image>https://example.org/example2.png</image>
-      <caption>A caption</caption>
+      <image>https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_dark_overlay_sidebar.png</image>
+      <caption>Single page view with sidebar as overlay in dark mode</caption>
     </screenshot>
+    <screenshot>
+      <image>https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_light_general.png</image>
+      <caption>General options menu</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_dark_download.png</image>
+      <caption>Download interface</caption>
+    </screenshot>
+
   </screenshots>
 
   <releases>

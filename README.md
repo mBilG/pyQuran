@@ -17,6 +17,16 @@ pyQyran is a simple Quran reader for Linux.
 pyQuran is a simple and easy to use Quran reader for linux that uses the Madani scripts from the King Fahd Complex.
 
 
+## Screenshots
+![alt text](https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_light_dual_page_sidebar.png)
+
+![alt text](https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_dark_overlay_sidebar.png)
+
+![alt text](https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_light_general.png)
+
+![alt text](https://github.com/mBilG/pyQuran/blob/master/screenshots/pyQuran_dark_download.png)
+
+
 ## Installation
 
 Download and install flatpak from Releases tab - until I figure out how to get it on flathub or something.

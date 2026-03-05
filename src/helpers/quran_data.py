@@ -3,6 +3,9 @@
 # Copyright 2020 mBilG
 #
 # This is a python helper file containing Quran data file for testing with python apps
+#
+# This assumes a 604 page mushaf! Other page counts will fail!
+#
 # A JSON file or SQL (for more complex data including ayah info) may be better?
 
 # Surah Names in Arabic
@@ -101,3 +104,20 @@ juzPage = (
     402, 413, 422, 431, 442, 451, 462, 472, 482, 491, 502, 513, 522, 531, 542, 553, 562, 572, 582, 591
     )
 
+
+# Currently available variants of the Mushaf
+mushafVariant = (
+    "Hafs (Old)",
+    "Hafs (New)",
+    "Hafs (Newest)",
+    "Qaloon",
+    "Warsh"
+    )
+
+githubLink = (
+    "https://github.com/mBilG/QuranImages/archive/refs/heads/hafs-old.zip",
+    "https://github.com/mBilG/QuranImages/archive/refs/heads/hafs-new.zip",
+    "https://github.com/mBilG/QuranImages/archive/refs/heads/hafs-newest.zip",
+    "https://github.com/mBilG/QuranImages/archive/refs/heads/qaloon.zip",
+    "https://github.com/mBilG/QuranImages/archive/refs/heads/warsh.zip"
+)

@@ -1,0 +1,3 @@
+meson-python
+pyproject-metadata
+numpy

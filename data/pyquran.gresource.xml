@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/com/thinqrlab/pyQuran">
+    <file preprocess="xml-stripblanks">ui/alert.ui</file>
     <file preprocess="xml-stripblanks">ui/window.ui</file>
     <file preprocess="xml-stripblanks">ui/mobile-view.ui</file>
     <file preprocess="xml-stripblanks">ui/desktop-view.ui</file>
     <file preprocess="xml-stripblanks">ui/sidebar-list.ui</file>
+    <file preprocess="xml-stripblanks">ui/sidebar-row.ui</file>
     <file preprocess="xml-stripblanks">ui/shortcuts-dialog.ui</file>
-  </gresource>
+    <file preprocess="xml-stripblanks">ui/preferences.ui</file>
+      </gresource>
 </gresources>

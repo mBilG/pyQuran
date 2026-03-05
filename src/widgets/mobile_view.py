@@ -17,10 +17,11 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import threading
+from gi.repository import Gtk, Gio, GLib
 
-from gi.repository import Gtk
-
-from .app_logic import PageInfo as pg
+from .page_info import GetPath
+from .invert import get_texture
 
 @Gtk.Template(resource_path='/com/thinqrlab/pyQuran/ui/mobile-view.ui')
 class MobileView(Gtk.Box):
@@ -31,10 +32,21 @@ class MobileView(Gtk.Box):
 
     def __init__(self, **kwargs):
         self.init_template()
+        self.settings = Gio.Settings(schema_id='com.thinqrlab.pyQuran')
 
 
-    def add_images(self, page_name, page_style, dark_mode):
-        self.page.set_filename(pg.single_path_from_page(self, page_name, page_style, dark_mode))
+    def add_images(self, page_name):
+        variant = self.settings.get_int("variant")
+        dark_mode = self.settings.get_boolean("dark-mode")
+
+        def background_work():
+            texture = get_texture(GetPath.single(self, page_name, variant), invert=dark_mode)
+
+            GLib.idle_add(self.page.set_paintable, texture)
+        thread = threading.Thread(target=background_work, daemon=True)
+        thread.start()
+
+
 
 
 

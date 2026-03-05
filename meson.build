@@ -7,7 +7,10 @@ project('pyquran', 'c',
 i18n = import('i18n')
 gnome = import('gnome')
 
+python = import('python')
+py_installation = python.find_installation('python3')
 
+run_command(py_installation, '-c', 'import numpy', check: true)
 
 
 subdir('data')

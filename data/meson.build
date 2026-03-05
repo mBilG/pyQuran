@@ -28,6 +28,8 @@ install_data('com.thinqrlab.pyQuran.gschema.xml',
   install_dir: get_option('datadir') / 'glib-2.0' / 'schemas'
 )
 
+gnome.compile_schemas()
+
 compile_schemas = find_program('glib-compile-schemas', required: false, disabler: true)
 test('Validate schema file',
      compile_schemas,
@@ -49,17 +51,15 @@ install_subdir('mushaf',
   install_dir: get_option('datadir') / meson.project_name()
 )
 
-install_data(
-  'fonts/AmiriQuran-Regular.ttf',
-  'fonts/kfgqpc-uthmanic-script-hafs-regular.ttf',
-  'fonts/ArefRuqaaInk-Regular.ttf',
-  install_dir: join_paths(get_option('prefix'), 'share', 'fonts'),
+install_subdir('fonts',
+  install_dir: 'share/fonts',
+  strip_directory: true
 )
 
 gnome.compile_resources(
   'pyquran',
   'pyquran.gresource.xml',
-  source_dir: '.', # Files like ui/window.ui are relative to this data/ folder
+  source_dir: '.',
   gresource_bundle: true,
   install: true,
   install_dir: get_option('datadir') / meson.project_name()

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="SidebarRow" parent="AdwActionRow">
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">12</property>
+        <property name="margin-start">12</property>
+        <property name="margin-end">12</property>
+        <property name="margin-top">6</property>
+        <property name="margin-bottom">6</property>
+        <child>
+          <object class="GtkLabel" id="label_id">
+            <property name="hexpand">true</property>
+            <property name="halign">start</property>
+            <property name="xalign">1</property>
+            <style><class name="numeric"/></style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkLabel" id="label_name">
+                <property name="halign">end</property>
+                <style><class name="title"/></style>
+                <style><class name="accent"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_sub">
+                <property name="halign">end</property>
+                <style><class name="caption"/><class name="dimmed"/></style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>
+

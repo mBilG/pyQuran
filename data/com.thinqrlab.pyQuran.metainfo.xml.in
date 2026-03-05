@@ -5,9 +5,17 @@
   <project_license>GPL-3.0-or-later</project_license>
 
   <name>PyQuran</name>
-  <summary>A simple, native Qur'an Application for GNOME Desktop</summary>
+  <summary>A Qur'an Application</summary>
   <description>
-    <p>As the title says, a simple app to read the Qur'an natively on linux - especially GNOME</p>
+    <p>A simple Qur'an reader that works natively on linux.</p>
+    <p>Multiple variants are available for download within the app if needed.</p>
+    <ul>
+      <li>Hafs (Old)</li>
+      <li>Hafs (New)</li>
+      <li>Hafs (Newest)</li>
+      <li>Qaloon</li>
+      <li>Warsh</li>
+      </ul>
   </description>
 
   <developer id="tld.vendor">
@@ -20,16 +28,8 @@
   <url type="vcs-browser">https://github.com/mBilG/pyQuran</url>
   <!-- Should point to the software's bug tracking system, for users to report new bugs -->
   <url type="bugtracker">https://github.com/mBilG/pyQuran/issues</url>
-  <!-- Should link a FAQ page for this software, to answer some of the most-asked questions in detail -->
-  <!-- URLs of this type should point to a webpage where users can submit or modify translations of the upstream project -->
-  <url type="translate">https://github.com/mBilG/pyQuran</url>
-  <url type="faq">https://github.com/mBilG/pyQuran</url>
-  <!-- Should provide a web link to an online user's reference, a software manual or help page -->
-  <url type="help">https://github.com/mBilG/pyQuran</url>
-  <!-- URLs of this type should point to a webpage showing information on how to donate to the described software project -->
-  <url type="donation">https://github.com/mBilG/pyQuran</url>
   <!-- This could for example be an HTTPS URL to an online form or a page describing how to contact the developer -->
-  <url type="contact">https://github.com/mBilG/pyQuran</url>
+  <url type="contact">https://www.thinqrlab.com/contact</url>
   <!-- URLs of this type should point to a webpage showing information on how to contribute to the described software project -->
   <url type="contribute">https://github.com/mBilG/pyQuran</url>
 
@@ -42,8 +42,8 @@
 
   <!-- Applications should set a brand color in both light and dark variants like so -->
   <branding>
-    <color type="primary" scheme_preference="light">#ff00ff</color>
-    <color type="primary" scheme_preference="dark">#993d3d</color>
+    <color type="primary" scheme_preference="light">#e57a44</color>
+    <color type="primary" scheme_preference="dark">#31081f</color>
   </branding>
 
   <screenshots>
@@ -58,13 +58,15 @@
   </screenshots>
 
   <releases>
-    <release version="3.0.0" date="2026-03-01">
+    <release version="49.0" date="2026-03-01">
       <url type="details">https://github.com/mBilG/pyQuran/releases</url>
       <description translate="no">
-        <p>Refactored code and updated runtime</p>
+        <p>Updated codebase and performance improvements</p>
         <ul>
-          <li>Refactored and simplified code</li>
-          <li>Updated runtime to GNOME 49</li>
+          <li>Version now matching GNOME runtime version</li>
+          <li>Made initial package lighter by removing additional variants</li>
+          <li>Additional variants now optional and available for download</li>
+          <li>Added more fonts for Arabic Text in app (not pages)</li>
         </ul>
       </description>
     </release>

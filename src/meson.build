@@ -23,11 +23,17 @@ pyquran_sources = [
   '__init__.py',
   'main.py',
   'window.py',
+  'widgets/alert.py',
   'widgets/desktop_view.py',
   'widgets/mobile_view.py',
   'widgets/sidebar_list.py',
+  'widgets/sidebar_row.py',
+  'widgets/preferences.py',
+  'helpers/font_attr.py',
+  'helpers/invert.py',
+  'helpers/page_info.py',
   'helpers/quran_data.py',
-  'helpers/app_logic.py',
+  'helpers/downloader.py',
 ]
 
 install_data(pyquran_sources, install_dir: moduledir)

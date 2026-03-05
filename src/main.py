@@ -28,7 +28,7 @@ gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Gio, Adw
 from .window import PyquranWindow
-
+from .preferences import PreferencesWindow
 
 class PyquranApplication(Adw.Application):
     """The main application singleton class."""
@@ -57,16 +57,17 @@ class PyquranApplication(Adw.Application):
         about = Adw.AboutDialog(application_name='pyQuran',
                                 application_icon='com.thinqrlab.pyQuran',
                                 developer_name='mBilG',
-                                version='3.0.0',
+                                version='49.0',
                                 developers=['mBilG'],
-                                copyright='© 2026 mBilG THINQRLAB')
+                                copyright='© 2026 mBilG @ www.thinqrlab.com')
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_('translator-credits'))
         about.present(self.props.active_window)
 
     def on_preferences_action(self, widget, _):
         """Callback for the app.preferences action."""
-        print('app.preferences action activated')
+        prefs = PreferencesWindow(transient_for=self.props.active_window)
+        prefs.present()
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

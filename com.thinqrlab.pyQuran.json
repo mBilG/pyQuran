@@ -6,6 +6,10 @@
     "command" : "pyquran",
     "finish-args" : [
         "--share=network",
+        "--talk-name=org.gtk.vfs.*",
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-data",
+        "--filesystem=xdg-cache",
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
@@ -23,6 +27,7 @@
         "*.a"
     ],
     "modules" : [
+        "python3-requirements.json",
         {
             "name" : "pyquran",
             "builddir" : true,

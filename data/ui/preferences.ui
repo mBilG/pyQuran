@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <requires lib="libadwaita" version="1.4"/>
+  <template class="PreferencesWindow" parent="AdwPreferencesWindow">
+    <property name="title" translatable="yes">Preferences</property>
+
+    <child> <!-- GENERAL PAGE -->
+      <object class="AdwPreferencesPage">
+        <property name="title" translatable="yes">Options</property>
+        <property name="icon-name">gears-symbolic</property>
+        <child>
+
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Appearance</property>
+
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Dark Mode</property>
+                <child type="suffix">
+                  <object class="GtkSwitch" id="dark_mode_switch">
+                    <property name="valign">center</property>
+                    <signal name="state-set" handler="on_dark_mode_switch_state_set"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Font Style</property>
+                <property name="subtitle" translatable="yes">Only for Surah names</property>
+
+                <child type="suffix">
+                  <object class="GtkDropDown" id="font_name">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+
+                <child type="suffix">
+                  <object class="GtkSpinButton" id="font_size">
+                    <signal name="value-changed" handler="on_font_size_value_changed"/>
+                    <property name="valign">center</property>
+                    <property name="margin-start">12</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">10</property>
+                        <property name="upper">20</property>
+                        <property name="step-increment">1</property>
+                        <property name="value">12</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+
+        </child>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Mushaf</property>
+            <child>
+              <object class="AdwComboRow" id="combo_variant">
+                <property name="title" translatable="yes">Variant</property>
+                <property name="subtitle" translatable="yes">Available variants of the Madani Mushaf</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>  <!-- GENERAL PAGE -->
+
+    <child>  <!-- DOWNLOADS PAGE -->
+      <object class="AdwPreferencesPage">
+        <property name="title" translatable="yes">Downloads</property>
+        <property name="icon-name">folder-download-symbolic</property>
+        <child>
+          <object class="AdwPreferencesGroup" id="download_group">
+            <property name="title" translatable="yes">Download Status</property>
+            <property name="description" translatable="yes">Variants available for download</property>
+
+          </object>
+        </child>
+      </object>
+    </child> <!-- DOWNLOADS PAGE -->
+
+  </template>
+</interface>

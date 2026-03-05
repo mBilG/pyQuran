@@ -22,19 +22,21 @@
 
     <child>
       <object class="AdwBreakpoint">
-        <condition>max-width: 800px</condition>
+        <condition>max-width: 900px</condition>
         <setter object="view_stack" property="visible-child-name">mobile</setter>
+        <setter object="split_view" property="collapsed">True</setter>
       </object>
     </child>
 
 
     <child>
       <object class="AdwOverlaySplitView" id="split_view">
+        <property name="enable-show-gesture">True</property>
           <property name="show-sidebar"
                     bind-source="sidebar_button"
                     bind-property="active"
                     bind-flags="bidirectional|sync-create"/>
-        <property name="collapsed">True</property>
+          <property name="collapsed">False</property>
 
           <property name="sidebar">
             <object class="SidebarList" id="sidebar_list"/>
@@ -84,6 +86,7 @@
                         <property name="wrap">True</property>
                         <property name="digits">0</property>
                         <property name="numeric">True</property>
+                        <property name="xalign">0</property>
                       </object>
 
                     </child>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <template class="AlertDialog" parent="AdwAlertDialog">
+    <property name="heading" translatable="yes">Error!</property>
+    <property name="body" translatable="yes">Error message</property>
+    <responses>
+      <response id="close" appearance="suggested">Close</response>
+    </responses>
+    <property name="close-response">close</property>
+  </template>
+</interface>

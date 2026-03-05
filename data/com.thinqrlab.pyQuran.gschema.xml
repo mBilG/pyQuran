@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="pyquran">
 	<schema id="com.thinqrlab.pyQuran" path="/com/thinqrlab/pyQuran/">
+	  <key name="dark-mode" type="b">
+      <default>false</default>
+      <summary>Whether dark mode is enabled</summary>
+    </key>
+	  	<key name="variant" type="i">
+      <default>0</default>
+      <summary>What variant of mushaf is being used</summary>
+    </key>
+	  	<key name="last-page" type="i">
+      <default>1</default>
+      <summary>The last page the user was on before closing the app</summary>
+    </key>
+	  	<key name="font-name" type="i">
+      <default>1</default>
+      <summary>Font used for Surah names</summary>
+    </key>
+	  	<key name="font-size" type="i">
+      <default>14</default>
+      <summary>Font size used for Surah names</summary>
+    </key>
 	</schema>
 </schemalist>

@@ -18,9 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
-from gi.repository import Gtk
+import threading
+from gi.repository import Gtk, Gio, GLib
 
-from .app_logic import PageInfo as pg
+from .page_info import GetPath
+from .invert import get_texture
 
 @Gtk.Template(resource_path='/com/thinqrlab/pyQuran/ui/desktop-view.ui')
 class DesktopView(Gtk.Box):
@@ -34,12 +36,32 @@ class DesktopView(Gtk.Box):
 
     def __init__(self, **kwargs):
         self.init_template()
+        self.settings = Gio.Settings(schema_id='com.thinqrlab.pyQuran')
 
 
-    def add_images(self, page_left, page_right, page_style, dark_mode=True):
-        self.imageLeft.set_filename(pg.single_path_from_page(self, page_left, page_style, dark_mode))
-        self.labelLeft.set_label(str(page_left))
-        self.imageRight.set_filename(pg.single_path_from_page(self, page_right, page_style, dark_mode))
-        self.labelRight.set_label(str(page_right))
+    def add_images(self, page):
+        if page % 2 == 0:
+            page_l = page
+            page_r = page - 1
+        else:
+            page_l = page + 1
+            page_r = page
 
+        variant = self.settings.get_int("variant")
+        dark_mode = self.settings.get_boolean("dark-mode")
+
+        def background_work():
+            tex_l = get_texture(GetPath.single(self, page_l, variant), invert=dark_mode)
+            tex_r = get_texture(GetPath.single(self, page_r, variant), invert=dark_mode)
+
+            GLib.idle_add(self.apply_all, tex_l, tex_r)
+        thread = threading.Thread(target=background_work, daemon=True)
+        thread.start()
+
+        self.labelLeft.set_label(str(page_l))
+        self.labelRight.set_label(str(page_r))
+
+    def apply_all(self, texture_left, texture_right):
+        self.imageRight.set_paintable(texture_right)
+        self.imageLeft.set_paintable(texture_left)
 

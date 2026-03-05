@@ -1,19 +1,20 @@
 # pyQuran
 
-pyQyran is a simple Quran reader for Linux desktop.
+pyQyran is a simple Quran reader for Linux.
 
 ## Features
 
 - Built using GTK4 & libadwaita
 - Simple & intuitive
-- Uses the old Madani script from King Fahd Complex
-- Follows system dark/light theme
 - Automatically folds/unfolds to see single/double page/s.
+- Dark/Light theme
+- Choose from multiple Madani Mushaf variants: Hafs (Old), Hafs (New), Warsh, Qaloon
+- Adjust the font and font size for Surah List
+
 
 ## Description
 
-pyQuran is a simple and easy to use Quran reader for the linux desktop that uses the old Madani scripts from the King Fahd Complex.
-I will add more page types in the future - maybe the writing for other qira'at as well.
+pyQuran is a simple and easy to use Quran reader for linux that uses the Madani scripts from the King Fahd Complex.
 
 
 ## Installation
